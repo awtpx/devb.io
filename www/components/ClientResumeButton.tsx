@@ -22,9 +22,16 @@ export default function ClientResumeButton({ username }: { username: string }) {
 
       const blob = await response.blob();
       const url = URL.createObjectURL(blob);
-      window.open(url, "_blank");
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${username}-resume.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
     } catch (error) {
       console.error("Error downloading resume:", error);
+      alert("Failed to generate resume. Please try again.");
     } finally {
       setIsLoading(false);
     }

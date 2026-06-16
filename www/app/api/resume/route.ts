@@ -10,10 +10,8 @@ export async function GET(request: NextRequest) {
       return Response.json({ error: "Username is required" }, { status: 400 });
     }
 
-    const pdfInstance = await generateResumePDF(username);
-    const pdfBuffer = await pdfInstance.toBuffer();
+    const pdfBuffer = await generateResumePDF(username);
 
-    //@ts-expect-error -- todo: fix this later
     return new Response(pdfBuffer, {
       headers: {
         "Content-Type": "application/pdf",

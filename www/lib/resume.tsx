@@ -3,7 +3,7 @@ import {
   Image,
   Link,
   Page,
-  pdf,
+  renderToBuffer,
   StyleSheet,
   Text,
   View,
@@ -379,7 +379,7 @@ async function getResumeData(username: string): Promise<ResumeData> {
   };
 }
 
-export async function generateResumePDF(username: string) {
+export async function generateResumePDF(username: string): Promise<Buffer> {
   const resumeData = await getResumeData(username);
-  return pdf(<ResumeDocument data={resumeData} />);
+  return renderToBuffer(<ResumeDocument data={resumeData} />);
 }
