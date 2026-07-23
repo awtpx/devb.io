@@ -44,3 +44,6 @@ uvicorn==0.33.0
 watchdog==6.0.0
 websockets==14.1
 yarl==1.18.3
+pandas
+requests
+pytorch
