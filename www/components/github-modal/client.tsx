@@ -192,7 +192,7 @@ export default function GitHubModal({ onClose }: GitHubModalProps) {
                 )}
               >
                 {loading ? (
-                  // 🔹 Tailwind-only spinner (no external libs)
+                  // Tailwind-only spinner (no external libs)
                   <div className="h-5 w-5 border-2 border-black border-t-transparent rounded-full animate-spin" />
                 ) : (
                   "View Profile"

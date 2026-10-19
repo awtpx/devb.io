@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import GitHubModal from '../github-modal/client';
-import { Github, GitFork } from 'lucide-react';
+import { Github, GitFork, Code2, Laptop, FolderGit2 } from 'lucide-react';
 import Counter from '../counter';
 import Link from 'next/link';
 
@@ -98,9 +98,9 @@ export default function AnimatedHeroClient() {
                         aria-hidden="true"
                         animate={{ y: [4, -8, 4] }}
                         transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-                        className="inline-flex relative -top-1 md:-top-2 border-2 md:border-[3px] border-white rotate-6 items-center justify-center bg-indigo-50 w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl mx-1 shadow-inner text-[22px] md:text-3xl shadow-lg shadow-[#B9FF66]/30"
+                        className="inline-flex relative -top-1 md:-top-2 border-2 md:border-[3px] border-white rotate-6 items-center justify-center bg-indigo-50 w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl mx-1 shadow-inner shadow-lg shadow-[#B9FF66]/30 text-indigo-600"
                     >
-                        👨‍💻
+                        <Code2 className="w-5 h-5 md:w-8 md:h-8" />
                     </motion.span>
                 </span>{' '}
                 <span className="whitespace-nowrap">Portfolios</span>{' '}
@@ -116,9 +116,9 @@ export default function AnimatedHeroClient() {
                             ease: 'easeInOut',
                             delay: 0.5,
                         }}
-                        className="inline-flex relative -top-1 md:-top-2 border-2 md:border-[3px] border-white -rotate-6 items-center justify-center bg-rose-50 w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl mx-1 shadow-inner text-[22px] md:text-3xl shadow-lg shadow-[#B9FF66]/30"
+                        className="inline-flex relative -top-1 md:-top-2 border-2 md:border-[3px] border-white -rotate-6 items-center justify-center bg-rose-50 w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl mx-1 shadow-inner shadow-lg shadow-[#B9FF66]/30 text-rose-500"
                     >
-                        💻
+                        <Laptop className="w-5 h-5 md:w-8 md:h-8" />
                     </motion.span>
                 </span>{' '}
                 <span className="whitespace-nowrap">
@@ -132,9 +132,9 @@ export default function AnimatedHeroClient() {
                             ease: 'easeInOut',
                             delay: 1,
                         }}
-                        className="inline-flex relative -top-1 md:-top-2 border-2 md:border-[3px] border-white -rotate-12 items-center justify-center bg-amber-50 w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl mx-1 shadow-inner text-[22px] md:text-3xl shadow-lg shadow-[#B9FF66]/30"
+                        className="inline-flex relative -top-1 md:-top-2 border-2 md:border-[3px] border-white -rotate-12 items-center justify-center bg-amber-50 w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl mx-1 shadow-inner shadow-lg shadow-[#B9FF66]/30 text-amber-500"
                     >
-                        📁
+                        <FolderGit2 className="w-5 h-5 md:w-8 md:h-8" />
                     </motion.span>
                 </span>
             </motion.h1>

@@ -23,11 +23,25 @@
     <meta name="theme-color" content="#B9FF66">
 
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap"
-            rel="stylesheet">
+    
+    
+    <style>
+@font-face {
+  font-family: 'DM Sans';
+  src: url('fonts/DMSans-Variable.ttf') format('truetype');
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('fonts/DMSans-Italic-Variable.ttf') format('truetype');
+  font-weight: 100 1000;
+  font-style: italic;
+  font-display: swap;
+}
+* { font-family: 'DM Sans', sans-serif !important; }
+</style>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
@@ -767,7 +781,7 @@
                         <!-- Bio Box -->
                         <div class="bg-white rounded-xl p-6 m-3 border-[1px] border-b-[6px] border-black xl:max-w-md">
                             <div class="flex items-center gap-2 mb-4">
-                                <span class="text-2xl">📝</span>
+                                <i data-lucide="file-text" class="w-6 h-6"></i>
                                 <h3 class="text-xl font-bold">Bio</h3>
                             </div>
                             <p class="text-gray-800"></p>
@@ -777,7 +791,7 @@
                         <div class="w-full p-3">
                             <div class="bg-white rounded-xl p-6 border-[1px] border-b-[6px] border-black">
                                 <div class="flex items-center gap-2 mb-4">
-                                    <span class="text-2xl">💻</span>
+                                    <i data-lucide="code-2" class="w-6 h-6"></i>
                                     <h3 class="text-xl font-bold">Languages</h3>
                                 </div>
                                 <div class="flex flex-wrap gap-2">
@@ -809,7 +823,7 @@
                         <!-- About Box -->
                         <div class="bg-white rounded-xl p-6 m-3 border-[1px] border-b-[6px] border-black">
                             <div class="flex items-center gap-2 mb-4">
-                                <span class="text-2xl">😊</span>
+                                <i data-lucide="user" class="w-6 h-6"></i>
                                 <h3 class="text-xl font-bold">About</h3>
                             </div>
                             <div class="space-y-4">
@@ -849,7 +863,7 @@
             <div class="share-section">
                 <div class="section-title">
                     <span class="highlight-text">Let the world know the skills you've got!</span>
-                    <span class="sub-text">✨ Pin this in your bio ✨</span>
+                    <span class="sub-text">Pin this in your bio</span>
                 </div>
 
             </div>
@@ -996,7 +1010,7 @@
         return profile.bio ? `
     <div class="bg-[#B9FF66] rounded-xl p-6 m-3 border-[1px] border-b-[6px] border-black xl:max-w-md">
         <div class="flex items-center gap-2 mb-4">
-            <span class="text-2xl">📝</span>
+            <i data-lucide="file-text" class="w-6 h-6"></i>
             <h3 class="text-xl font-bold">Bio</h3>
         </div>
         <p class="text-gray-800">${profile.bio}</p>
@@ -1091,7 +1105,7 @@
 
         // Set up social share links with full URL
         const shareText = encodeURIComponent(`Check out my developer profile on devb.io!`);
-        const linkedinText = encodeURIComponent(`👋 Hey connections!\n\nI wanted to share my developer profile showcasing my skills, projects, and contributions.\n\nCheck it out and let me know what you think! 🚀\n\n#developers #coding #github #portfolio`);
+        const linkedinText = encodeURIComponent(`Hey connections!\n\nI wanted to share my developer profile showcasing my skills, projects, and contributions.\n\nCheck it out and let me know what you think!\n\n#developers #coding #github #portfolio`);
         const encodedUrl = encodeURIComponent(profileUrl);
         
         twitterShare.href = `https://twitter.com/intent/tweet?text=${shareText}&url=${encodedUrl}`;
@@ -1107,7 +1121,7 @@
             <div class="w-full p-3">
                 <div class="bg-white rounded-xl p-6 border-[1px] border-b-[6px] border-black">
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="text-2xl">💻</span>
+                        <i data-lucide="code-2" class="w-6 h-6"></i>
                         <h3 class="text-xl font-bold">Languages</h3>
                     </div>
                     <div class="flex flex-wrap gap-2">
@@ -1211,7 +1225,7 @@
         return `
             <div class="bg-[#B9FF66] rounded-xl p-6 m-3 border-[1px] border-b-[6px] border-black">
                             <div class="flex items-start flex-col">
-                                <span class="text-2xl">📍</span>
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
                                 <h3 class="text-xl font-bold">Location</h3>
                                 <h2 class="text-sm">${profile.location}</h2>
                             </div>
@@ -1376,7 +1390,7 @@
                         ${renderBio(profile)}
                         <div class="bg-white rounded-xl p-6 m-3 border-[1px] border-b-[6px] border-black xl:hidden">
                             <div class="flex items-center gap-2 mb-4">
-                                <span class="text-2xl">😊</span>
+                                <i data-lucide="user" class="w-6 h-6"></i>
                                 <h3 class="text-xl font-bold">About</h3>
                             </div>
                             <p class="text-gray-700">
@@ -1422,7 +1436,7 @@
                         <!-- About Box -->
                         <div class="bg-white rounded-xl p-6 m-3 border-[1px] border-b-[6px] border-black hidden xl:block">
                             <div class="flex items-center gap-2 mb-4">
-                                <span class="text-2xl">😊</span>
+                                <i data-lucide="user" class="w-6 h-6"></i>
                                 <h3 class="text-xl font-bold">About</h3>
                             </div>
                             <p class="text-gray-700">

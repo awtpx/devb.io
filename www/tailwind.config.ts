@@ -54,8 +54,10 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        outfit: ["var(--font-outfit)"],
-        "space-grotesk": ["var(--font-space-grotesk)"],
+        "dm-sans": ["var(--font-dm-sans)", "sans-serif"],
+        outfit: ["var(--font-dm-sans)", "sans-serif"],
+        "space-grotesk": ["var(--font-dm-sans)", "sans-serif"],
+        sans: ["var(--font-dm-sans)", "sans-serif"],
       },
     },
   },

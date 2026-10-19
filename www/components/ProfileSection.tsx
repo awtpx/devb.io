@@ -86,7 +86,7 @@ export async function ProfileSection({
         <div className="px-4 md:px-8 pb-4 pt-20">
           <div className="flex flex-col items-start text-left">
             <h1 className="font-bold text-2xl mb-2 text-black">
-              {user.name.toUpperCase()}
+              {(user.name || user.username || "").toUpperCase()}
             </h1>
             <p className="text-gray-700 text-md">{user.bio}</p>
           </div>

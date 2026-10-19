@@ -1,6 +1,6 @@
 import Badge from "@/components/Badge";
 import { getUserProfile, getUserProjects } from "@/lib/api";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Code2, User, MapPin } from "lucide-react";
 
 export async function AboutSection({ username }: { username: string }) {
   const user = await getUserProfile(username);
@@ -21,7 +21,10 @@ export async function AboutSection({ username }: { username: string }) {
           style={{ animationDelay: "100ms" }}
         >
           <div className="bg-white rounded-xl p-6 border-1 border-black border-b-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-            <h2 className="text-xl font-bold mb-4">💻 Languages</h2>
+            <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <Code2 className="w-5 h-5 text-black" />
+              <span>Languages</span>
+            </h2>
             <div className="flex flex-wrap gap-3">
               {userProjects?.top_languages?.map((language, index) => (
                 <div
@@ -75,7 +78,10 @@ export async function AboutSection({ username }: { username: string }) {
             { user?.about &&
                 <div
                     className="bg-white rounded-xl p-6 border-1 border-black border-b-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                    <h2 className="text-xl font-bold mb-4">🤔 About</h2>
+                    <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+                        <User className="w-5 h-5 text-black" />
+                        <span>About</span>
+                    </h2>
                     <p className="text-gray-700">
                         {user?.about}
                     </p>
@@ -85,7 +91,10 @@ export async function AboutSection({ username }: { username: string }) {
               className="bg-[#B9FF66] rounded-xl p-6 border-1 border-black border-b-4 col-span-2 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-fade-in"
               style={{animationDelay: "500ms"}}
           >
-            <h2 className="text-xl font-bold mb-2">📍 Location</h2>
+            <h2 className="text-xl font-bold mb-2 flex items-center gap-2">
+              <MapPin className="w-5 h-5 text-black" />
+              <span>Location</span>
+            </h2>
             <p>{user?.location}</p>
           </div>)}
         </div>

@@ -4,8 +4,24 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DMSans-Variable.ttf') format('truetype');
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DMSans-Italic-Variable.ttf') format('truetype');
+  font-weight: 100 1000;
+  font-style: italic;
+  font-display: swap;
+}
+
 @theme {
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-dm-sans), 'DM Sans', sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -124,7 +140,8 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
   }
 }
 

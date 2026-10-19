@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
-import { Outfit, Space_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { QueryClientProvider } from "@/providers/CustomQueryClientProvider";
 import Script from "next/script";
 import { Banner } from "@/components/banner";
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
+const dmSans = localFont({
+  src: [
+    {
+      path: "./fonts/DMSans-Variable.ttf",
+      style: "normal",
+    },
+    {
+      path: "./fonts/DMSans-Italic-Variable.ttf",
+      style: "italic",
+    },
+  ],
+  variable: "--font-dm-sans",
   display: "swap",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -69,7 +70,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${outfit.variable} ${spaceGrotesk.variable} font-outfit`}
+        className={`${dmSans.variable} font-dm-sans`}
       >
         <QueryClientProvider>
           <Banner />

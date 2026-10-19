@@ -1,6 +1,7 @@
 "use client";
 import { DEVB_GITHUB_LINK } from "@/lib/constants";
 import { motion } from "framer-motion";
+import { Hand } from "lucide-react";
 
 export default function NextContributorCard({ index }: { index: number }) {
   const openGithub = () => {
@@ -18,7 +19,9 @@ export default function NextContributorCard({ index }: { index: number }) {
       onClick={openGithub}
     >
       <div className="aspect-square relative flex items-center justify-center bg-gray-50">
-        <div className="text-6xl">👋</div>
+        <div className="w-16 h-16 rounded-2xl bg-[#B9FF66]/20 border border-[#B9FF66] flex items-center justify-center shadow-sm">
+          <Hand className="w-8 h-8 text-black stroke-[1.75]" />
+        </div>
       </div>
       <div className="p-4 text-center">
         <h3 className="text-lg font-semibold mb-1">You?</h3>
